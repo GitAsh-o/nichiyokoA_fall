@@ -44,6 +44,9 @@ public class PlayerSc : MonoBehaviour
                 transform.parent = null;
                 Text.SetActive(false);
                 drawCube.SetActive(false);
+                a = 0.5f;
+                b = 0.1f;
+                c = 0.9f;
                 DeletewallSc.istouch = false;
             }
         }
@@ -169,9 +172,6 @@ public class PlayerSc : MonoBehaviour
         {
             rb.velocity = Vector3.zero;
             jump = 1;
-            a = 0.5f;
-            b = 0.1f;
-            c = 0.9f;
             offset.transform.rotation = Quaternion.Euler(0, 0, 180 * a - 90);
             Text.SetActive(true);
             drawCube.SetActive(true);

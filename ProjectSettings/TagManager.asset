@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Stage
+  - floor
+  - goal
+  - deletewall
+  - left wall
+  - right wall
+  - bottom wall
+  - head wall
+  - moving wall
+  - wall
   layers:
   - Default
   - TransparentFX
