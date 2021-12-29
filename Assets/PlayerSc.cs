@@ -76,7 +76,7 @@ public class PlayerSc : MonoBehaviour
         {
             if(checknum == 0)
             {
-                gameObject.transform.position = new Vector3(0, 0, 0);
+                gameObject.transform.position = new Vector3(0, 0.4375f, 0);
             }
             else if(checknum == 1)
             {
@@ -174,6 +174,7 @@ public class PlayerSc : MonoBehaviour
             jump = 1;
             offset.transform.rotation = Quaternion.Euler(0, 0, 180 * a - 90);
             Text.SetActive(true);
+            drawCube.GetComponent<DrawLine>().Set(new Vector3(0, 1, 0));
             drawCube.SetActive(true);
         }
         if (col.gameObject.CompareTag("goal"))
