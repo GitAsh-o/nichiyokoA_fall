@@ -50,6 +50,7 @@ public class PlayerSc : MonoBehaviour
                 DeletewallSc.istouch = false;
             }
         }
+
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             a += (0.75f * Time.deltaTime);
@@ -76,7 +77,7 @@ public class PlayerSc : MonoBehaviour
         {
             if(checknum == 0)
             {
-                gameObject.transform.position = new Vector3(0, 0.4375f, 0);
+                gameObject.transform.position = new Vector3(0, 4.375f, 0);
             }
             else if(checknum == 1)
             {
@@ -167,6 +168,10 @@ public class PlayerSc : MonoBehaviour
             offset.transform.rotation = Quaternion.Euler(0, 0, 180 * a - 90);
             DeletewallSc.istouch = true;
             Debug.Log("ddd");
+        }
+        if (col.gameObject.CompareTag("DamageWall"))
+        {
+            gameObject.transform.position = new Vector3(0, 4.375f, 0);
         }
         if (col.gameObject.CompareTag("floor"))
         {
