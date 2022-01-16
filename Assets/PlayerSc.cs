@@ -49,34 +49,38 @@ public class PlayerSc : MonoBehaviour
                 c = 0.9f;
                 DeletewallSc.istouch = false;
             }
+            else if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                a += (0.75f * Time.deltaTime);
+                if (a >= c)
+                {
+                    a = c;
+                }
+                sita = a * (Mathf.PI);
+                offset.transform.rotation = Quaternion.Euler(0, 0, 180 * a - 90);
+                drawCube.SetActive(true);
+                drawCube.GetComponent<DrawLine>().Set(new Vector3(Mathf.Cos(sita) * speed, Mathf.Sin(sita) * speed, 0));
+            }
+            else if (Input.GetKey(KeyCode.RightArrow))
+            {
+                a -= (0.75f * Time.deltaTime);
+                if (a <= b)
+                {
+                    a = b;
+                }
+                sita = a * (Mathf.PI);
+                offset.transform.rotation = Quaternion.Euler(0, 0, 180 * a - 90);
+                drawCube.SetActive(true);
+                drawCube.GetComponent<DrawLine>().Set(new Vector3(Mathf.Cos(sita) * speed, Mathf.Sin(sita) * speed, 0));
+            }
         }
 
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            a += (0.75f * Time.deltaTime);
-            if (a >= c)
-            {
-                a = c;
-            }
-            sita = a * (Mathf.PI);
-            offset.transform.rotation = Quaternion.Euler(0, 0, 180 * a - 90);
-            drawCube.GetComponent<DrawLine>().Set(new Vector3(Mathf.Cos(sita) * speed, Mathf.Sin(sita) * speed, 0));
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            a -= (0.75f * Time.deltaTime);
-            if (a <= b)
-            {
-                a = b;
-            }
-            sita = a * (Mathf.PI);
-            offset.transform.rotation = Quaternion.Euler(0, 0, 180 * a - 90);
-            drawCube.GetComponent<DrawLine>().Set(new Vector3(Mathf.Cos(sita) * speed, Mathf.Sin(sita) * speed, 0));
-        }
+        
         if(this.gameObject.transform.position.y < -10)
         {
             if(checknum == 0)
             {
+                rb.velocity = Vector3.zero;
                 gameObject.transform.position = new Vector3(0, 4.375f, 0);
             }
             else if(checknum == 1)
@@ -105,7 +109,6 @@ public class PlayerSc : MonoBehaviour
             sita = a * (Mathf.PI);
             offset.transform.rotation = Quaternion.Euler(0, 0, 180 * a - 90);
             Text.SetActive(true);
-            drawCube.SetActive(true);
             Debug.Log("right");
         }
         if (col.gameObject.CompareTag("left wall"))
@@ -120,7 +123,6 @@ public class PlayerSc : MonoBehaviour
             sita = a * (Mathf.PI);
             offset.transform.rotation = Quaternion.Euler(0, 0, 180 * a - 90);
             Text.SetActive(true);
-            drawCube.SetActive(true);
             Debug.Log("left");
         }
         if (col.gameObject.CompareTag("head wall"))
@@ -135,7 +137,6 @@ public class PlayerSc : MonoBehaviour
             sita = a * (Mathf.PI);
             offset.transform.rotation = Quaternion.Euler(0, 0, 180 * a - 90);
             Text.SetActive(true);
-            drawCube.SetActive(true);
             Debug.Log("head");
         }
         if (col.gameObject.CompareTag("bottom wall"))
@@ -150,7 +151,6 @@ public class PlayerSc : MonoBehaviour
             sita = a * (Mathf.PI);
             offset.transform.rotation = Quaternion.Euler(0, 0, 180 * a - 90);
             Text.SetActive(true);
-            drawCube.SetActive(true);
             Debug.Log("bottom");
         }
         if (col.gameObject.CompareTag("wall"))
@@ -179,8 +179,6 @@ public class PlayerSc : MonoBehaviour
             jump = 1;
             offset.transform.rotation = Quaternion.Euler(0, 0, 180 * a - 90);
             Text.SetActive(true);
-            drawCube.GetComponent<DrawLine>().Set(new Vector3(0, 1, 0));
-            drawCube.SetActive(true);
         }
         if (col.gameObject.CompareTag("goal"))
         {
