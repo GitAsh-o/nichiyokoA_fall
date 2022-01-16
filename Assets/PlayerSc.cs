@@ -169,7 +169,7 @@ public class PlayerSc : MonoBehaviour
             DeletewallSc.istouch = true;
             Debug.Log("ddd");
         }
-        if (col.gameObject.CompareTag("DamageWall"))
+        if (col.gameObject.CompareTag("Damage"))
         {
             gameObject.transform.position = new Vector3(0, 4.375f, 0);
         }
@@ -185,6 +185,9 @@ public class PlayerSc : MonoBehaviour
         if (col.gameObject.CompareTag("goal"))
         {
             SceneManager.LoadScene("goal");
+        }
+        if (col.gameObject.CompareTag("Gravity"))
+        {
         }
     }
 

@@ -14,7 +14,8 @@ TagManager:
   - head wall
   - moving wall
   - wall
-  - DamageWall
+  - Damage
+  - Gravity
   layers:
   - Default
   - TransparentFX
