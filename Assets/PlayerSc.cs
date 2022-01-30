@@ -176,6 +176,7 @@ public class PlayerSc : MonoBehaviour
         if (col.gameObject.CompareTag("floor"))
         {
             rb.velocity = Vector3.zero;
+            rb.gravityScale = 0;
             jump = 1;
             offset.transform.rotation = Quaternion.Euler(0, 0, 180 * a - 90);
             Text.SetActive(true);
