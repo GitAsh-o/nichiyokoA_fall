@@ -16,6 +16,8 @@ TagManager:
   - wall
   - Damage
   - Gravity
+  - Check
+  - break
   layers:
   - Default
   - TransparentFX

@@ -5,11 +5,11 @@ using UnityEngine;
 public class BreakFloorSc : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float floorhp;
+    public static float floorhp = 1f;
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -32,7 +32,7 @@ public class BreakFloorSc : MonoBehaviour
         {
             if (floorhp == 0)
             {
-                Destroy(this.gameObject);
+                this.gameObject.SetActive(false);
             }
         }
     }

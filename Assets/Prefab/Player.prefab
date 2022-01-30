@@ -218,6 +218,7 @@ MonoBehaviour:
   Text: {fileID: 1720767193376348294}
   offset: {fileID: 3943519065453922662}
   drawCube: {fileID: 6243130790261215394}
+  Bf: {fileID: 4352826713879472201, guid: 6992bef51ca409c40b5f3cf2da0464b0, type: 3}
 --- !u!50 &3396163180323772908
 Rigidbody2D:
   serializedVersion: 4

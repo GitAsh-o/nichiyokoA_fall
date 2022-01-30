@@ -73,23 +73,28 @@ public class PlayerSc : MonoBehaviour
                 drawCube.SetActive(true);
                 drawCube.GetComponent<DrawLine>().Set(new Vector3(Mathf.Cos(sita) * speed, Mathf.Sin(sita) * speed, 0));
             }
-        }
 
-        
-        if(this.gameObject.transform.position.y < -10)
-        {
-            if(checknum == 0)
+            if (this.gameObject.transform.position.y < -10)
             {
-                rb.velocity = Vector3.zero;
-                gameObject.transform.position = new Vector3(0, 4.375f, 0);
-            }
-            else if(checknum == 1)
-            {
-                gameObject.transform.position = new Vector3(9,14f, 0);
-            }
-            else if (checknum == 2)
-            {
-                gameObject.transform.position = new Vector3(42.5f, 17f, 0);
+                BreakFloorSc.floorhp = 1;
+                GameObject[] bf = GameObject.FindGameObjectsWithTag("break");
+                foreach (GameObject breakfloor in bf)
+                {
+                    breakfloor.SetActive(true);
+                }
+                if (checknum == 0)
+                {
+                    rb.velocity = Vector3.zero;
+                    gameObject.transform.position = new Vector3(0, 4.375f, 0);
+                }
+                else if (checknum == 1)
+                {
+                    gameObject.transform.position = new Vector3(9, 14f, 0);
+                }
+                else if (checknum == 2)
+                {
+                    gameObject.transform.position = new Vector3(42.5f, 17f, 0);
+                }
             }
         }
     }
