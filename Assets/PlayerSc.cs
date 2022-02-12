@@ -13,7 +13,7 @@ public class PlayerSc : MonoBehaviour
     float b = 0.1f;
     float c = 0.9f;
     float sita = 0;
-    float speed = 7.5f;
+    float speed = 8f;
     int jump = 0;
     int checknum = 0;
     public GameObject offset;
@@ -39,7 +39,7 @@ public class PlayerSc : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 rb.velocity = new Vector3(Mathf.Cos(sita) * speed, Mathf.Sin(sita) * speed, 0);
-                rb.gravityScale = 1;
+                rb.gravityScale = 1f;
                 jump = 0;
                 transform.parent = null;
                 Text.SetActive(false);
@@ -106,7 +106,6 @@ public class PlayerSc : MonoBehaviour
         {
             rb.gravityScale = 0;
             rb.velocity = Vector3.zero;
-            speed = 7.5f;
             jump = 1;
             a = 0f;
             b = -0.4f;
@@ -120,7 +119,6 @@ public class PlayerSc : MonoBehaviour
         {
             rb.velocity = Vector3.zero;
             rb.gravityScale = 0;
-            speed = 7.5f;
             jump = 1;
             a = 1.0f;
             b = 0.6f;
@@ -134,7 +132,6 @@ public class PlayerSc : MonoBehaviour
         {
             rb.velocity = Vector3.zero;
             rb.gravityScale = 0;
-            speed = 7.5f;
             jump = 1;
             a = 0.5f;
             b = 0.1f;
@@ -148,7 +145,6 @@ public class PlayerSc : MonoBehaviour
         {
             rb.velocity = Vector3.zero;
             rb.gravityScale = 0;
-            speed = 7.5f;
             jump = 1;
             a = -0.5f;
             b = -0.9f;
