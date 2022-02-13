@@ -18,12 +18,9 @@ public class BreakFloorSc : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D col)
+    public void breakfloor()
     {
-        if(col.gameObject.CompareTag("Player"))
-        {
-            floorhp --;
-        }
+        floorhp--;
     }
 
     private void OnCollisionExit2D(Collision2D col)

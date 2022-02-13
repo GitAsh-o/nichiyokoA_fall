@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4352826713879472213}
   - component: {fileID: 4352826713879472202}
   - component: {fileID: 4352826713879472200}
-  - component: {fileID: 4352826713879472203}
+  - component: {fileID: 2478720621228269846}
   m_Layer: 0
   m_Name: BreakFloor
   m_TagString: break
@@ -112,7 +112,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4352826713879472203
+--- !u!114 &2478720621228269846
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,8 +136,8 @@ GameObject:
   - component: {fileID: 4352826715072477632}
   - component: {fileID: 4352826715072477633}
   m_Layer: 0
-  m_Name: floor
-  m_TagString: floor
+  m_Name: breakfloor
+  m_TagString: breakfloor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -218,7 +218,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

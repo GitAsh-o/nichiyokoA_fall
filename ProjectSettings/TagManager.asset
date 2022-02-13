@@ -18,6 +18,8 @@ TagManager:
   - Gravity
   - Check
   - break
+  - newgoal
+  - breakfloor
   layers:
   - Default
   - TransparentFX

@@ -157,7 +157,6 @@ public class PlayerSc : MonoBehaviour
         if (col.gameObject.CompareTag("wall"))
         {
             offset.transform.rotation = Quaternion.Euler(0, 0, 180 * a - 90);
-            Debug.Log("wall");
         }
         if (col.gameObject.CompareTag("moving wall"))
         {
@@ -168,7 +167,6 @@ public class PlayerSc : MonoBehaviour
         {
             offset.transform.rotation = Quaternion.Euler(0, 0, 180 * a - 90);
             DeletewallSc.istouch = true;
-            Debug.Log("ddd");
         }
         if (col.gameObject.CompareTag("Damage"))
         {
@@ -182,17 +180,26 @@ public class PlayerSc : MonoBehaviour
             offset.transform.rotation = Quaternion.Euler(0, 0, 180 * a - 90);
             Text.SetActive(true);
         }
-        if (col.gameObject.CompareTag("goal"))
+        if (col.gameObject.CompareTag("newgoal"))
         {
-            SceneManager.LoadScene("goal");
+            SceneManager.LoadScene("NewGoal");
         }
-        if (col.gameObject.CompareTag("Gravity"))
+        if (col.gameObject.CompareTag("break"))
         {
+            col.gameObject.GetComponent<BreakFloorSc>().breakfloor();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.gameObject.CompareTag("breakfloor"))
+        {
+            rb.velocity = Vector3.zero;
+            rb.gravityScale = 0;
+            jump = 1;
+            offset.transform.rotation = Quaternion.Euler(0, 0, 180 * a - 90);
+            Text.SetActive(true);
+        }
         if (other.gameObject.CompareTag("Check"))
         {
             other.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
